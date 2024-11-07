@@ -12,6 +12,7 @@ function App() {
           <button onClick={() => setCount(count + 1)} className='bg-green-500 rounded-lg p-2 text-white'>Add</button>
           <button onClick={() => setCount(count + 10)} className='bg-green-500 rounded-lg p-2 text-white'>Add 10</button>
           <button onClick={() => setCount(count + 100)} className='bg-green-500 rounded-lg p-2 text-white'>Add 100</button>
+          <button onClick={() => setCount(count + 1000)} className='bg-green-500 rounded-lg p-2 text-white'>Add 1000</button>
           {
             count <= 0 ? '' : <button onClick={() => setCount(count - 1)} className='bg-red-500 rounded-lg p-2 text-white'>Remove</button>
           }
@@ -20,6 +21,9 @@ function App() {
           }
           {
             count <= 99 ? '' : <button onClick={() => setCount(count - 100)} className='bg-red-500 rounded-lg p-2 text-white'>Remove 100</button>
+          }
+          {
+            count <= 999 ? '' : <button onClick={() => setCount(count - 1000)} className='bg-red-500 rounded-lg p-2 text-white'>Remove 1000</button>
           }
           {
             count <= 0 ? '' : <button onClick={() => setCount(count - count)} className='bg-orange-500 rounded-lg p-2 text-white'>Reset</button>
@@ -34,7 +38,9 @@ function App() {
         {
           Array(count).fill(0).map((_, i) => {
             i = i + 1
-            if (i % 100 === 0) {
+            if (i % 1000 === 0) {
+              return <div key={i} className="bg-emerald-500 rounded-lg flex-grow flex-shrink text-center min-w-16">{i}</div>
+            } else if (i % 100 === 0) {
               return <div key={i} className="bg-rose-500 rounded-lg flex-grow flex-shrink text-center min-w-16">{i}</div>
             } else if (i % 10 === 0) {
               return <div key={i} className="bg-yellow-500 rounded-lg flex-grow flex-shrink text-center min-w-16">{i}</div>
@@ -53,7 +59,9 @@ function App() {
         {
           Array(count).fill(0).map((_, i) => {
             i = i + 1
-            if (i % 100 === 0) {
+            if (i % 1000 === 0) {
+              return <div key={i} className="bg-emerald-500 rounded-lg text-center min-w-16">{i}</div>
+            } else if (i % 100 === 0) {
               return <div key={i} className="bg-rose-500 rounded-lg text-center min-w-16">{i}</div>
             } else if ( i % 10 === 0) {
               return <div key={i} className="bg-yellow-500 rounded-lg text-center min-w-16">{i}</div>
