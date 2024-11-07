@@ -12,7 +12,6 @@ function App() {
           <button onClick={() => setCount(count + 1)} className='bg-green-500 rounded-lg p-2 text-white'>Add</button>
           <button onClick={() => setCount(count + 10)} className='bg-green-500 rounded-lg p-2 text-white'>Add 10</button>
           <button onClick={() => setCount(count + 100)} className='bg-green-500 rounded-lg p-2 text-white'>Add 100</button>
-          <button onClick={() => setCount(count + 1000)} className='bg-green-500 rounded-lg p-2 text-white'>Add 1000</button>
           {
             count <= 0 ? '' : <button onClick={() => setCount(count - 1)} className='bg-red-500 rounded-lg p-2 text-white'>Remove</button>
           }
