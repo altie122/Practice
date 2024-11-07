@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 function App() {
+  // Make count able to be changed from the UI
   const [count, setCount] = useState(0)
 
   return (
