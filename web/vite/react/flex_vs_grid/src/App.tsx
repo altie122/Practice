@@ -5,8 +5,15 @@ import { Button } from "@/components/ui/button";
 function App() {
   // Make count able to be changed from the UI
   const [count, setCount] = useState(0);
+  const [code1show, setcode1show] = useState(false);
+  const [code2show, setcode2show] = useState(false);
   const [code3show, setcode3show] = useState(false);
-
+  const code1 = `<div class='flex justify-center gap-3 flex-wrap flex-row'>
+  ...
+</div>`;
+  const code2 = `<div class='grid grid-cols-10 gap-3'>
+  ...
+</div>`;
   const code3 = `<div class='grid grid-cols-5 sm:grid-cols-10 gap-3'>
   ...
 </div>`;
@@ -86,6 +93,9 @@ function App() {
           )}
         </div>
         <h2 className='text-3xl'>Count: {count}</h2>
+        {
+          count != 0 && <p>All code examples use tailwindcss for styling.</p>
+        }
       </div>
       {count <= 0 ? (
         ""
@@ -94,12 +104,12 @@ function App() {
           <h3 className='text-2xl'>Flex</h3>
           <p>
             Code example:{" "}
-            <Button onClick={() => setcode3show(!code3show)} variant={"ghost"}>
-              {code3show ? <>Hide code</> : <>Show code</>}
+            <Button onClick={() => setcode1show(!code1show)} variant={"ghost"}>
+              {code1show ? <>Hide code</> : <>Show code</>}
             </Button>
           </p>
-          {code3show && (
-            <CopyBlock text={code3} theme={solarizedDark} language='html' />
+          {code1show && (
+            <CopyBlock text={code1} theme={solarizedDark} language='html' />
           )}
         </>
       )}
@@ -163,12 +173,12 @@ function App() {
           <h3 className='text-2xl'>Grid</h3>
           <p>
             Code example:{" "}
-            <Button onClick={() => setcode3show(!code3show)} variant={"ghost"}>
-              {code3show ? <>Hide code</> : <>Show code</>}
+            <Button onClick={() => setcode2show(!code2show)} variant={"ghost"}>
+              {code2show ? <>Hide code</> : <>Show code</>}
             </Button>
           </p>
-          {code3show && (
-            <CopyBlock text={code3} theme={solarizedDark} language='html' />
+          {code2show && (
+            <CopyBlock text={code2} theme={solarizedDark} language='html' />
           )}
         </>
       )}
